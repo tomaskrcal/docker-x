@@ -1,4 +1,4 @@
-name: Build and Push PHP Base Image
+name: Build and Push PHP 8.4 Base Image
 
 on:
   push:

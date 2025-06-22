@@ -64,11 +64,14 @@ COPY . /var/www
   * Imagick
 * **System tools:** Nginx, Supervisor, Git, Curl, ICU, ImageMagick
 
+* **DEV Image includes:**
+  * composer:2
+  * node and npm from node:22-alpine3.21
 ---
 
 ## Custom Configuration
 
-This image copies your configuration files:
+This image copies configuration files:
 
 * `config/php.ini` → `/usr/local/etc/php/conf.d/custom.ini`
 * `config/nginx.conf` → `/etc/nginx/nginx.conf`
@@ -90,7 +93,9 @@ docker run -p 8080:80 -v $(pwd):/var/www tomaskrcal99/php:8.4-fpm-alpine3.21
 Clone this repo and build the image:
 
 ```sh
-docker build -t my-php-app:latest images/php/84-fpm-alpine312
+cd images/php/84-fpm-alpine312
+docker build -t php-app:8.4-fpm-alpine3.21 -f prod.Dockerfile .
+cd ../../..
 ```
 
 ---
