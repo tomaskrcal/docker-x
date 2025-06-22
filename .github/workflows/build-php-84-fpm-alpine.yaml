@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'images/php/84-fpm-alpine312/prod.Dockerfile'
+      - 'images/php/84-fpm-alpine312/Dockerfile'
+      - 'images/php/84-fpm-alpine312/config/**'
   workflow_dispatch:
 
 jobs:
@@ -30,3 +34,11 @@ jobs:
           file: images/php/84-fpm-alpine312/prod.Dockerfile
           push: true
           tags: tomaskrcal99/php:8.4-fpm-alpine3.21
+
+      - name: Build and Push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: images/php/84-fpm-alpine312
+          file: images/php/84-fpm-alpine312/Dockerfile
+          push: true
+          tags: tomaskrcal99/php:8.4-fpm-alpine3.21-dev
