@@ -7,7 +7,5 @@ COPY --from=node:22-alpine3.21 /usr/local/bin /usr/local/bin
 
 COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 
-WORKDIR /var/www
-
 EXPOSE 80 443
 
