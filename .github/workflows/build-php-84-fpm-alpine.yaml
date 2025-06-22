@@ -35,7 +35,7 @@ jobs:
           push: true
           tags: tomaskrcal99/php:8.4-fpm-alpine3.21
 
-      - name: Build and Push Docker image
+      - name: Build and Push Dev Docker image
         uses: docker/build-push-action@v5
         with:
           context: images/php/84-fpm-alpine312
